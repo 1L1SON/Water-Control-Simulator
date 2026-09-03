@@ -56,18 +56,19 @@ public class FreeCamNewInputSystem : MonoBehaviour
 
     private void Update()
     {
-        // Обработка выхода из режима свободной камеры (Esc)
-        if (Keyboard.current.escapeKey.wasPressedThisFrame)
+        // Переключение режима курсора по клавише M (Toggle)
+        if (Keyboard.current.mKey.wasPressedThisFrame)
         {
-            Cursor.lockState = CursorLockMode.None;
-            Cursor.visible = true;
-        }
-
-        // Повторный захват курсора по клику левой кнопкой мыши
-        if (Mouse.current.leftButton.wasPressedThisFrame && Cursor.lockState == CursorLockMode.None)
-        {
-            Cursor.lockState = CursorLockMode.Locked;
-            Cursor.visible = false;
+            if (Cursor.lockState == CursorLockMode.Locked)
+            {
+                Cursor.lockState = CursorLockMode.None;
+                Cursor.visible = true;
+            }
+            else
+            {
+                Cursor.lockState = CursorLockMode.Locked;
+                Cursor.visible = false;
+            }
         }
 
         // Вращение камеры только при заблокированном курсоре и зажатой ПКМ
