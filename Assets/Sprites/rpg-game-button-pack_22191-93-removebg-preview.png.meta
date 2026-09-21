@@ -1,0 +1,1006 @@
+fileFormatVersion: 2
+guid: 38d0e5ab5cdcbc742982cdf812beffc7
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 0
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 0
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: rpg-game-button-pack_22191-93-removebg-preview_0
+      rect:
+        serializedVersion: 2
+        x: 7
+        y: 434
+        width: 334
+        height: 127
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f1d9fe97b83e0264286abd15f966230c
+      internalID: -515830163
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rpg-game-button-pack_22191-93-removebg-preview_1
+      rect:
+        serializedVersion: 2
+        x: 403
+        y: 494
+        width: 11
+        height: 5
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3ef58a16fa1d9c44a8be1ec55be71e74
+      internalID: 392817327
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rpg-game-button-pack_22191-93-removebg-preview_2
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 363
+        width: 60
+        height: 60
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8e29c7ef64c866a4ea5558aa1be57c33
+      internalID: 1267496201
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rpg-game-button-pack_22191-93-removebg-preview_3
+      rect:
+        serializedVersion: 2
+        x: 85
+        y: 363
+        width: 60
+        height: 60
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aa1777f1a08019e4496cd8b0a1f543fc
+      internalID: 863520374
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rpg-game-button-pack_22191-93-removebg-preview_4
+      rect:
+        serializedVersion: 2
+        x: 153
+        y: 363
+        width: 61
+        height: 60
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 65dd36e1226f76d44b96a8392f1cbd56
+      internalID: 914181226
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rpg-game-button-pack_22191-93-removebg-preview_5
+      rect:
+        serializedVersion: 2
+        x: 223
+        y: 363
+        width: 60
+        height: 60
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2abdb927c63a2e048bae0e0243ec8b9b
+      internalID: -1255495014
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rpg-game-button-pack_22191-93-removebg-preview_6
+      rect:
+        serializedVersion: 2
+        x: 292
+        y: 363
+        width: 60
+        height: 60
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a7fb96ae93560124888b93f76ed690bc
+      internalID: -1657942339
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rpg-game-button-pack_22191-93-removebg-preview_7
+      rect:
+        serializedVersion: 2
+        x: 361
+        y: 362
+        width: 60
+        height: 61
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2e875cbf995a28648b8be4786346867a
+      internalID: 1308782341
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rpg-game-button-pack_22191-93-removebg-preview_8
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 293
+        width: 60
+        height: 60
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6b3620d36d6e2d14ebe503033213958c
+      internalID: 13095901
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rpg-game-button-pack_22191-93-removebg-preview_9
+      rect:
+        serializedVersion: 2
+        x: 85
+        y: 293
+        width: 60
+        height: 60
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c6adab3a487274f428aa89234c59a5c3
+      internalID: -2082475626
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rpg-game-button-pack_22191-93-removebg-preview_10
+      rect:
+        serializedVersion: 2
+        x: 154
+        y: 293
+        width: 60
+        height: 61
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ad06bceb9b66f3147817b0a4fba4c77b
+      internalID: 1805146679
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rpg-game-button-pack_22191-93-removebg-preview_11
+      rect:
+        serializedVersion: 2
+        x: 223
+        y: 293
+        width: 60
+        height: 60
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2a67001ac5bb2bb4dbc4891e3a272b6f
+      internalID: -486967980
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rpg-game-button-pack_22191-93-removebg-preview_12
+      rect:
+        serializedVersion: 2
+        x: 292
+        y: 294
+        width: 60
+        height: 59
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c51fcad1d6be5044e931d5fd573785be
+      internalID: 404147266
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rpg-game-button-pack_22191-93-removebg-preview_13
+      rect:
+        serializedVersion: 2
+        x: 361
+        y: 293
+        width: 60
+        height: 60
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dc0c2d519fe00a54b8a37cb520ee9d8f
+      internalID: -1653592035
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rpg-game-button-pack_22191-93-removebg-preview_14
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 224
+        width: 60
+        height: 61
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5269c5e8a0070074ab6058f4674dcc74
+      internalID: 1087841703
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rpg-game-button-pack_22191-93-removebg-preview_15
+      rect:
+        serializedVersion: 2
+        x: 85
+        y: 224
+        width: 60
+        height: 61
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c364bc40091579b439111851f9586192
+      internalID: -129299604
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rpg-game-button-pack_22191-93-removebg-preview_16
+      rect:
+        serializedVersion: 2
+        x: 154
+        y: 224
+        width: 60
+        height: 61
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a7a92062aaaaac243be093821fd3233d
+      internalID: 2032948990
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rpg-game-button-pack_22191-93-removebg-preview_17
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 224
+        width: 59
+        height: 61
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 331d2e19802684a41a5c50dc487b585e
+      internalID: -1018106738
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rpg-game-button-pack_22191-93-removebg-preview_18
+      rect:
+        serializedVersion: 2
+        x: 292
+        y: 224
+        width: 60
+        height: 61
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 21b25faeb917f934981b8fa8e2dbbac0
+      internalID: 2108987146
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rpg-game-button-pack_22191-93-removebg-preview_19
+      rect:
+        serializedVersion: 2
+        x: 361
+        y: 224
+        width: 60
+        height: 61
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1bab0deef42bdfc40bd1cb5e96e02b08
+      internalID: -745768549
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rpg-game-button-pack_22191-93-removebg-preview_20
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 155
+        width: 60
+        height: 60
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d0c65e1accd718e46b843937c3a1347d
+      internalID: 1962812439
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rpg-game-button-pack_22191-93-removebg-preview_21
+      rect:
+        serializedVersion: 2
+        x: 84
+        y: 155
+        width: 61
+        height: 60
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5a818e0e0d064984d95636256222b12f
+      internalID: 243820998
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rpg-game-button-pack_22191-93-removebg-preview_22
+      rect:
+        serializedVersion: 2
+        x: 153
+        y: 155
+        width: 61
+        height: 61
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5e70835592438bb449355141c8eb6a46
+      internalID: -242712256
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rpg-game-button-pack_22191-93-removebg-preview_23
+      rect:
+        serializedVersion: 2
+        x: 223
+        y: 155
+        width: 60
+        height: 60
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e25e21016292f144cb5057e934a83aa5
+      internalID: 1557434335
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rpg-game-button-pack_22191-93-removebg-preview_24
+      rect:
+        serializedVersion: 2
+        x: 292
+        y: 155
+        width: 60
+        height: 60
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bb567de1c3fb2864fb4df81e60ffb24c
+      internalID: -450790658
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rpg-game-button-pack_22191-93-removebg-preview_25
+      rect:
+        serializedVersion: 2
+        x: 360
+        y: 155
+        width: 61
+        height: 60
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 306918e9d71a66840ac8da7526b8028c
+      internalID: -462221720
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rpg-game-button-pack_22191-93-removebg-preview_26
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 86
+        width: 61
+        height: 61
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 45e391a732886794ba5e31e62a2bfdee
+      internalID: 1172019314
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rpg-game-button-pack_22191-93-removebg-preview_27
+      rect:
+        serializedVersion: 2
+        x: 84
+        y: 86
+        width: 61
+        height: 61
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ac657eecadbbced44b18807dec0049e2
+      internalID: 1088127058
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rpg-game-button-pack_22191-93-removebg-preview_28
+      rect:
+        serializedVersion: 2
+        x: 153
+        y: 87
+        width: 61
+        height: 60
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d74077c213ea5574fa23ec6af9290481
+      internalID: -72134364
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rpg-game-button-pack_22191-93-removebg-preview_29
+      rect:
+        serializedVersion: 2
+        x: 222
+        y: 86
+        width: 60
+        height: 61
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 438e2d32e606e2a428c4340a55024d8b
+      internalID: 825623189
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rpg-game-button-pack_22191-93-removebg-preview_30
+      rect:
+        serializedVersion: 2
+        x: 290
+        y: 86
+        width: 60
+        height: 61
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4f3745bf11d3059429f6a211367efde5
+      internalID: -1667284636
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rpg-game-button-pack_22191-93-removebg-preview_31
+      rect:
+        serializedVersion: 2
+        x: 358
+        y: 86
+        width: 61
+        height: 61
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9d5ee0df607d1014cbd71877bf23c02e
+      internalID: 1195792036
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rpg-game-button-pack_22191-93-removebg-preview_32
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 18
+        width: 61
+        height: 60
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b6d8a8153adb06d4b9d2fecdf15470aa
+      internalID: -1201103356
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rpg-game-button-pack_22191-93-removebg-preview_33
+      rect:
+        serializedVersion: 2
+        x: 84
+        y: 18
+        width: 61
+        height: 62
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9b6ba380b20622e49a090b38cfbde78e
+      internalID: 1550787375
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rpg-game-button-pack_22191-93-removebg-preview_34
+      rect:
+        serializedVersion: 2
+        x: 153
+        y: 18
+        width: 61
+        height: 60
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 19d1d2eaae780ff46a62987dde821f55
+      internalID: 549724260
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rpg-game-button-pack_22191-93-removebg-preview_35
+      rect:
+        serializedVersion: 2
+        x: 222
+        y: 18
+        width: 60
+        height: 60
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 02057bfea271b254db7afef731124202
+      internalID: -246792672
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rpg-game-button-pack_22191-93-removebg-preview_36
+      rect:
+        serializedVersion: 2
+        x: 290
+        y: 18
+        width: 60
+        height: 60
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5d10351ba0d0a2f4c882e37d8c8e63cf
+      internalID: 1838237247
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rpg-game-button-pack_22191-93-removebg-preview_37
+      rect:
+        serializedVersion: 2
+        x: 358
+        y: 17
+        width: 61
+        height: 61
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 35ccf7d16572f9b4aa1ae1b3df20aa33
+      internalID: 956850918
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 29537026dd813b64486ae1a5c3864ff6
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":64.0,"y":64.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":0,"keepEmptyRects":false,"isAlternate":false}'
+    nameFileIdTable:
+      rpg-game-button-pack_22191-93-removebg-preview_0: -515830163
+      rpg-game-button-pack_22191-93-removebg-preview_1: 392817327
+      rpg-game-button-pack_22191-93-removebg-preview_10: 1805146679
+      rpg-game-button-pack_22191-93-removebg-preview_11: -486967980
+      rpg-game-button-pack_22191-93-removebg-preview_12: 404147266
+      rpg-game-button-pack_22191-93-removebg-preview_13: -1653592035
+      rpg-game-button-pack_22191-93-removebg-preview_14: 1087841703
+      rpg-game-button-pack_22191-93-removebg-preview_15: -129299604
+      rpg-game-button-pack_22191-93-removebg-preview_16: 2032948990
+      rpg-game-button-pack_22191-93-removebg-preview_17: -1018106738
+      rpg-game-button-pack_22191-93-removebg-preview_18: 2108987146
+      rpg-game-button-pack_22191-93-removebg-preview_19: -745768549
+      rpg-game-button-pack_22191-93-removebg-preview_2: 1267496201
+      rpg-game-button-pack_22191-93-removebg-preview_20: 1962812439
+      rpg-game-button-pack_22191-93-removebg-preview_21: 243820998
+      rpg-game-button-pack_22191-93-removebg-preview_22: -242712256
+      rpg-game-button-pack_22191-93-removebg-preview_23: 1557434335
+      rpg-game-button-pack_22191-93-removebg-preview_24: -450790658
+      rpg-game-button-pack_22191-93-removebg-preview_25: -462221720
+      rpg-game-button-pack_22191-93-removebg-preview_26: 1172019314
+      rpg-game-button-pack_22191-93-removebg-preview_27: 1088127058
+      rpg-game-button-pack_22191-93-removebg-preview_28: -72134364
+      rpg-game-button-pack_22191-93-removebg-preview_29: 825623189
+      rpg-game-button-pack_22191-93-removebg-preview_3: 863520374
+      rpg-game-button-pack_22191-93-removebg-preview_30: -1667284636
+      rpg-game-button-pack_22191-93-removebg-preview_31: 1195792036
+      rpg-game-button-pack_22191-93-removebg-preview_32: -1201103356
+      rpg-game-button-pack_22191-93-removebg-preview_33: 1550787375
+      rpg-game-button-pack_22191-93-removebg-preview_34: 549724260
+      rpg-game-button-pack_22191-93-removebg-preview_35: -246792672
+      rpg-game-button-pack_22191-93-removebg-preview_36: 1838237247
+      rpg-game-button-pack_22191-93-removebg-preview_37: 956850918
+      rpg-game-button-pack_22191-93-removebg-preview_4: 914181226
+      rpg-game-button-pack_22191-93-removebg-preview_5: -1255495014
+      rpg-game-button-pack_22191-93-removebg-preview_6: -1657942339
+      rpg-game-button-pack_22191-93-removebg-preview_7: 1308782341
+      rpg-game-button-pack_22191-93-removebg-preview_8: 13095901
+      rpg-game-button-pack_22191-93-removebg-preview_9: -2082475626
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
