@@ -1,18 +1,18 @@
-﻿using System.Collections.Generic;
+﻿using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
 
 public class PipesColorController : MonoBehaviour
 {
-    // Singleton для доступа из сцены мини-игры
     public static PipesColorController Instance { get; private set; }
 
     public enum PipeStatus
     {
-        Normal,     // Бирюзовый - нет поломок
-        Warning,    // Жёлтый - маленькие проблемы
-        Broken      // Красный - поломано
+        Normal,     // Бирюзовый
+        Warning,    // Жёлтый
+        Broken      // Красный
     }
 
     [Header("Pipes Root / Renderers")]
@@ -33,15 +33,22 @@ public class PipesColorController : MonoBehaviour
 
     private List<Material> instantiatedMaterials = new List<Material>();
     private Dictionary<MeshRenderer, int> rendererToIndexMap = new Dictionary<MeshRenderer, int>();
+    private Dictionary<int, PipeStatus> pipeStatuses = new Dictionary<int, PipeStatus>();
 
-    private int randomBrokenIndex = -1;
+    // Текущий вычисленный фоновый цвет каждой трубы (даже когда свечение выключено)
+    private Dictionary<int, Color> currentPipeColors = new Dictionary<int, Color>();
+
+    // Отслеживание активных корутин
+    private Dictionary<int, Coroutine> activeColorRoutines = new Dictionary<int, Coroutine>();
+
     private bool isSystemActive = false;
-    private bool isMinigameActive = false; // Блокировка повторных кликов
+    private bool isMinigameActive = false;
     private int currentInteractingPipeIndex = -1;
+
+    private Coroutine breakdownRoutine;
 
     private void Awake()
     {
-        // Singleton паттерн
         if (Instance == null)
         {
             Instance = this;
@@ -58,7 +65,6 @@ public class PipesColorController : MonoBehaviour
         if (pipeRenderers == null || pipeRenderers.Length == 0)
             pipeRenderers = GetComponentsInChildren<MeshRenderer>();
 
-        // Создаем индивидуальные копии материалов для каждой трубы
         for (int i = 0; i < pipeRenderers.Length; i++)
         {
             MeshRenderer rend = pipeRenderers[i];
@@ -68,24 +74,30 @@ public class PipesColorController : MonoBehaviour
                 instantiatedMaterials.Add(instanceMat);
                 rendererToIndexMap[rend] = i;
 
+                pipeStatuses[i] = PipeStatus.Normal;
+                currentPipeColors[i] = normalColor;
+
                 instanceMat.DisableKeyword("_EMISSION");
                 instanceMat.SetColor(EmissionColorID, Color.black);
             }
         }
+    }
 
-        // Выбираем случайную поломанную трубу при старте
+    private void Start()
+    {
+        // При старте игры случайно делаем одну трубу КРАСНОЙ
         if (instantiatedMaterials.Count > 0)
         {
-            randomBrokenIndex = Random.Range(0, instantiatedMaterials.Count);
+            int startBrokenIndex = Random.Range(0, instantiatedMaterials.Count);
+            pipeStatuses[startBrokenIndex] = PipeStatus.Broken;
+            currentPipeColors[startBrokenIndex] = brokenColor;
         }
     }
 
     private void Update()
     {
-        // Не принимаем клики, если система выключена или мини-игра УЖЕ запущена
         if (!isSystemActive || isMinigameActive) return;
 
-        // Клик ЛКМ через New Input System
         if (Mouse.current != null && Mouse.current.leftButton.wasPressedThisFrame)
         {
             TryRepairPipeUnderCursor();
@@ -93,7 +105,7 @@ public class PipesColorController : MonoBehaviour
     }
 
     /// <summary>
-    /// Вызывается из WaterControlTool при нажатии кнопки UI
+    /// Переключение режима видимости подсветок труб
     /// </summary>
     public void SetPipesColor(bool isToggled)
     {
@@ -108,7 +120,8 @@ public class PipesColorController : MonoBehaviour
             if (isToggled)
             {
                 mat.EnableKeyword("_EMISSION");
-                mat.SetColor(EmissionColorID, i == randomBrokenIndex ? brokenColor : normalColor);
+                // При включении инструмента применяем актуальный сгенерированный цвет из памяти
+                mat.SetColor(EmissionColorID, currentPipeColors[i]);
             }
             else
             {
@@ -117,6 +130,114 @@ public class PipesColorController : MonoBehaviour
             }
         }
     }
+
+    #region Логика смены состояний и Фоновых Корутин
+
+    public void RepairPipe(int pipeIndex)
+    {
+        if (!pipeStatuses.ContainsKey(pipeIndex)) return;
+
+        pipeStatuses[pipeIndex] = PipeStatus.Normal;
+        
+        // Быстро возвращаем починенную трубу в нормальный цвет за 1 секунду
+        AnimateColorChange(pipeIndex, normalColor, 1.0f);
+        Debug.Log($"Труба #{pipeIndex} починена и восстанавливается!");
+
+        // Запускаем цикл поломки следующей случайной трубы
+        if (breakdownRoutine != null) StopCoroutine(breakdownRoutine);
+        breakdownRoutine = StartCoroutine(ScheduleNextBreakdownRoutine());
+    }
+
+    private IEnumerator ScheduleNextBreakdownRoutine()
+    {
+        List<int> normalPipes = GetPipesByStatus(PipeStatus.Normal);
+        if (normalPipes.Count == 0) yield break;
+
+        int targetPipeIndex = normalPipes[Random.Range(0, normalPipes.Count)];
+
+        // 1. Медленно желтеет в течение 4-10 секунд
+        float timeToWarning = Random.Range(4f, 10f);
+        Debug.Log($"Труба #{targetPipeIndex} начинает медленно желтеть в фоне ({timeToWarning:F1} сек)...");
+        
+        yield return AnimateColorChange(targetPipeIndex, warningColor, timeToWarning);
+        pipeStatuses[targetPipeIndex] = PipeStatus.Warning;
+
+        // 2. Окно в 10 секунд (труба жёлтая)
+        yield return new WaitForSeconds(10f);
+
+        // 3. Если за 10 секунд не починили, медленно краснеет в течение 6-14 секунд
+        if (pipeStatuses[targetPipeIndex] == PipeStatus.Warning)
+        {
+            float timeToBroken = Random.Range(6f, 14f);
+            Debug.Log($"Труба #{targetPipeIndex} начинает медленно краснеть в фоне ({timeToBroken:F1} сек)...");
+
+            yield return AnimateColorChange(targetPipeIndex, brokenColor, timeToBroken);
+            
+            if (pipeStatuses[targetPipeIndex] == PipeStatus.Warning)
+            {
+                pipeStatuses[targetPipeIndex] = PipeStatus.Broken;
+                Debug.Log($"Труба #{targetPipeIndex} стала полностью красной!");
+            }
+        }
+    }
+
+    private Coroutine AnimateColorChange(int pipeIndex, Color targetColor, float duration)
+    {
+        if (pipeIndex < 0 || pipeIndex >= instantiatedMaterials.Count) return null;
+
+        if (activeColorRoutines.ContainsKey(pipeIndex) && activeColorRoutines[pipeIndex] != null)
+        {
+            StopCoroutine(activeColorRoutines[pipeIndex]);
+        }
+
+        Coroutine routine = StartCoroutine(ContinuousColorChangeRoutine(pipeIndex, targetColor, duration));
+        activeColorRoutines[pipeIndex] = routine;
+        return routine;
+    }
+
+    private IEnumerator ContinuousColorChangeRoutine(int pipeIndex, Color targetColor, float duration)
+    {
+        Material mat = instantiatedMaterials[pipeIndex];
+        Color startColor = currentPipeColors[pipeIndex];
+        float elapsedTime = 0f;
+
+        while (elapsedTime < duration)
+        {
+            elapsedTime += Time.deltaTime;
+            Color lerpedColor = Color.Lerp(startColor, targetColor, elapsedTime / duration);
+            
+            // Запоминаем текущий цвет в памяти ВСЕГДА
+            currentPipeColors[pipeIndex] = lerpedColor;
+
+            // Назначаем его материалу, ТОЛЬКО если инструмент сейчас активен
+            if (isSystemActive && mat != null)
+            {
+                mat.SetColor(EmissionColorID, lerpedColor);
+            }
+
+            yield return null;
+        }
+
+        currentPipeColors[pipeIndex] = targetColor;
+
+        if (isSystemActive && mat != null)
+        {
+            mat.SetColor(EmissionColorID, targetColor);
+        }
+    }
+
+    private List<int> GetPipesByStatus(PipeStatus status)
+    {
+        List<int> result = new List<int>();
+        foreach (var pair in pipeStatuses)
+        {
+            if (pair.Value == status)
+                result.Add(pair.Key);
+        }
+        return result;
+    }
+
+    #endregion
 
     private void TryRepairPipeUnderCursor()
     {
@@ -129,8 +250,9 @@ public class PipesColorController : MonoBehaviour
             {
                 if (rendererToIndexMap.TryGetValue(hitRenderer, out int pipeIndex))
                 {
-                    // Если кликнули по поломанной (красной) трубе — запускаем мини-игру
-                    if (pipeIndex == randomBrokenIndex)
+                    PipeStatus currentStatus = pipeStatuses[pipeIndex];
+
+                    if (currentStatus == PipeStatus.Warning || currentStatus == PipeStatus.Broken)
                     {
                         currentInteractingPipeIndex = pipeIndex;
                         StartMinigame();
@@ -142,13 +264,10 @@ public class PipesColorController : MonoBehaviour
 
     private void StartMinigame()
     {
-        isMinigameActive = true; // Блокируем клики по 3D миру
+        isMinigameActive = true;
         SceneManager.LoadScene(minigameSceneName, LoadSceneMode.Additive);
     }
 
-    /// <summary>
-    /// Этот метод вызывает PipeMinigame.cs при завершении игры
-    /// </summary>
     public void OnMinigameCompleted(bool success)
     {
         SceneManager.UnloadSceneAsync(minigameSceneName);
@@ -159,40 +278,7 @@ public class PipesColorController : MonoBehaviour
         }
 
         currentInteractingPipeIndex = -1;
-        isMinigameActive = false; // Разблокируем клики после закрытия мини-игры
-    }
-
-    public void RepairPipe(int pipeIndex)
-    {
-        if (pipeIndex < 0 || pipeIndex >= instantiatedMaterials.Count) return;
-
-        // Смена цвета с красного на бирюзовый
-        SetSinglePipeStatus(pipeIndex, PipeStatus.Normal);
-
-        if (pipeIndex == randomBrokenIndex)
-        {
-            randomBrokenIndex = -1;
-            Debug.Log($"Труба #{pipeIndex} успешно починена!");
-        }
-    }
-
-    public void SetSinglePipeStatus(int pipeIndex, PipeStatus status)
-    {
-        if (pipeIndex < 0 || pipeIndex >= instantiatedMaterials.Count) return;
-
-        Material mat = instantiatedMaterials[pipeIndex];
-        if (mat == null) return;
-
-        Color targetColor = status switch
-        {
-            PipeStatus.Normal => normalColor,
-            PipeStatus.Warning => warningColor,
-            PipeStatus.Broken => brokenColor,
-            _ => normalColor
-        };
-
-        mat.EnableKeyword("_EMISSION");
-        mat.SetColor(EmissionColorID, targetColor);
+        isMinigameActive = false;
     }
 
     private void OnDestroy()
