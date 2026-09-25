@@ -1,13 +1,13 @@
+using System;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.InputSystem;
 
-public class PipeMinigame : MonoBehaviour
+public class PipeMinigame : MonoBehaviour 
 {
     [Header("UI Elements")]
     [Tooltip("RectTransform движущейся трубы")]
     [SerializeField] private RectTransform movingPipe;
-
     [Header("Movement Settings")]
     [Tooltip("Левая граница по оси X (local position)")]
     [SerializeField] private float minX = -300f;
@@ -15,25 +15,19 @@ public class PipeMinigame : MonoBehaviour
     [SerializeField] private float maxX = 300f;
     [Tooltip("Скорость перемещения трубы")]
     [SerializeField] private float moveSpeed = 400f;
-
     [Header("Target & Tolerance Settings")]
     [Tooltip("Целевая координата X, куда нужно установить трубу")]
     [SerializeField] private float targetPositionX = 0f;
-    
     [Tooltip("Максимально допустимое отклонение по X для зачёта попадания (зона успеха)")]
     [SerializeField] private float toleranceRange = 50f;
-
     [Tooltip("Процент от toleranceRange для примагничивания (0.5 = 50% от зоны успеха)")]
     [Range(0.1f, 1.0f)]
     [SerializeField] private float snapPercentage = 0.5f;
-
     [Header("Events")]
     public UnityEvent OnMinigameSuccess;
     public UnityEvent OnMinigameFailed;
-
     private bool isPlaying = true;
-    private float currentPingPongTime = 0f;
-
+    private float currentPingPongTime = 0f;z
     // snapRange вычисляется автоматически
     private float CalculatedSnapRange => toleranceRange * snapPercentage;
 
@@ -41,7 +35,7 @@ public class PipeMinigame : MonoBehaviour
     {
         ResetMinigame();
     }
-
+    
     private void Update()
     {
         if (!isPlaying || movingPipe == null) return;
@@ -100,5 +94,6 @@ public class PipeMinigame : MonoBehaviour
     {
         isPlaying = true;
         currentPingPongTime = 0f;
+        moveSpeed = PipesColorController.Instance.MiniGameSpeed;
     }
 }

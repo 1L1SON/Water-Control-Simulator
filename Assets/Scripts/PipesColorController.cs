@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.Rendering;
 using UnityEngine.SceneManagement;
 
 public class PipesColorController : MonoBehaviour
@@ -46,6 +47,7 @@ public class PipesColorController : MonoBehaviour
     private int currentInteractingPipeIndex = -1;
 
     private Coroutine breakdownRoutine;
+    public float MiniGameSpeed;
 
     private void Awake()
     {
@@ -252,10 +254,18 @@ public class PipesColorController : MonoBehaviour
                 {
                     PipeStatus currentStatus = pipeStatuses[pipeIndex];
 
-                    if (currentStatus == PipeStatus.Warning || currentStatus == PipeStatus.Broken)
+                    if (currentStatus == PipeStatus.Warning)
+                    {
+                        currentInteractingPipeIndex = pipeIndex;
+                        
+                        StartMinigame();
+                        MiniGameSpeed = 400f;
+                    }
+                    else if (currentStatus == PipeStatus.Broken)
                     {
                         currentInteractingPipeIndex = pipeIndex;
                         StartMinigame();
+                        MiniGameSpeed = 800f;
                     }
                 }
             }
