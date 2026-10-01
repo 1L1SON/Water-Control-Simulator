@@ -7,6 +7,10 @@ public class FreeCamNewInputSystem : MonoBehaviour
     public float moveSpeed = 10f;          // Скорость перемещения
     public float mouseSensitivity = 2f;    // Чувствительность мыши
 
+    [Header("Flight Boundaries")]
+    [Tooltip("Прикрепите сюда любой Collider (например, BoxCollider с включенным IsTrigger)")]
+    [SerializeField] private Collider boundsCollider;
+
     private InputActionMap actionMap;
     private InputAction moveAction;
     private InputAction lookAction;
@@ -92,6 +96,23 @@ public class FreeCamNewInputSystem : MonoBehaviour
             move.Normalize();
             transform.position += move * moveSpeed * Time.deltaTime;
         }
+
+        // Ограничиваем позицию камеры границами коллайдера
+        ClampPositionToBounds();
+    }
+
+    /// <summary>
+    /// Проверяет, находится ли камера внутри коллайдера-границы, и не даёт ей вылететь за пределы.
+    /// </summary>
+    private void ClampPositionToBounds()
+    {
+        if (boundsCollider == null) return;
+
+        // Находим ближайшую точку коллайдера к текущей позиции камеры
+        Vector3 clampedPosition = boundsCollider.ClosestPoint(transform.position);
+
+        // Если камера вышла за пределы коллайдера, возвращаем её на границу
+        transform.position = clampedPosition;
     }
 
     private void OnDestroy()

@@ -27,7 +27,7 @@ public class PipeMinigame : MonoBehaviour
     public UnityEvent OnMinigameSuccess;
     public UnityEvent OnMinigameFailed;
     private bool isPlaying = true;
-    private float currentPingPongTime = 0f;z
+    private float currentPingPongTime = 0f;
     // snapRange вычисляется автоматически
     private float CalculatedSnapRange => toleranceRange * snapPercentage;
 

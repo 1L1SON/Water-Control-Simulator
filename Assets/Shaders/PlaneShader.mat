@@ -29,10 +29,10 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _Alpha: 1
+    - _Alpha: 0.6
     - _Cull: 2
     - _Cutoff: 1
-    - _Darkness: 1
+    - _Darkness: 0
     - _ZWrite: 1
     m_Colors:
     - _BaseColor: {r: 0.41418448, g: 0.46540874, b: 0.424663, a: 1}
